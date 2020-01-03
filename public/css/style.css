@@ -24,7 +24,8 @@ III - ANIMATIONS
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; }
+    box-sizing: border-box;
+}
 
 
 /* 1-2 Fonts / Titrages */
@@ -33,40 +34,48 @@ III - ANIMATIONS
 
 /* 1-3 Navigation */
 
-header #background_container{
+html {
+    background-color: rgb(0, 0, 0);
+}
+/* Mise en place de la video header */
+#background_container {
     position: fixed;
     top: 0;
     left: 0;
     background-position: center;
     background-size: cover;
+
 }
 
-.VideoPane-video{
+.VideoPane-video {
     width: 100%;
 }
 
-
-.navigation{
+/* Barre de navigation */
+.navigation {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     background-image: url("../img/wood.png");
     font-size: 1.6em;
-    border-bottom:solid 1px #352114;
+    border-bottom: solid 1px #352114;
 
 }
 
-.navigation a{
+.navigation a {
     font-family: 'IM Fell English SC', serif;
     display: inline-block;
-    text-decoration-line: none;
-    color: bisque;
     text-shadow: 2px 2px 5px black;
-
+    background: -webkit-linear-gradient(#f88c44, #ffa3c6);
+    /* background: -webkit-linear-gradient(rgb(74, 39, 32), rgb(202, 132, 56)); */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-.navigation a:hover{
-    color: white;
+.navigation a:hover {
+    background: #fdf8e3;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     text-decoration-line: underline;
 }
 
@@ -83,8 +92,72 @@ header #background_container{
 }
 
 /*Texte de présentations*/
+.absol {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 50;
+}
 
-.presentation{
+.absol2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.absol3 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 50;
+}
+
+.absol3 p {
+    color: white;
+    text-shadow: 1px 1px 3px #000000;
+}
+
+.absol3 a {
+    text-decoration: none;
+    color: bisque;
+    text-decoration-line: none;
+}
+
+.absol3 a:hover {
+    color: white;
+    text-decoration-line: underline;
+}
+
+.absol3 h1 {
+    color: bisque;
+    font-family: 'IM Fell English SC', serif;
+    text-shadow: 2px 2px 3px #000000;
+    font-size: 3.5rem;
+}
+
+.absol3 .news {
+    background-color: rgba(0, 0, 0, 0.3);
+    border: solid 1px bisque;
+    width: 300px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    margin: 0 auto;
+    text-shadow: 2px 2px 3px #000000;
+    font-family: 'IM Fell English SC', serif;
+    text-transform: uppercase;
+    color: bisque;
+}
+
+.absol3 .news:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+
+.presentation {
     position: absolute;
     top: 25%;
     left: 25%;
@@ -95,27 +168,162 @@ header #background_container{
     font-size: 1.2em;
 }
 
-.para2{
+.para2 {
     margin-left: 15%;
 }
 
-.para1, .para2{
+.para1, .para2 {
     width: 100%;
 }
 
-.news{
-    width:180px;
+.news {
+    width: 180px;
     height: 50px;
-    background-color: rgba(0,0,0,0.6);
+    background-color: rgba(0, 0, 0, 0.6);
     border: solid 1px bisque;
     text-align: center;
     line-height: 50px;
     margin: 10px auto;
 }
 
-.presentation a{
+.presentation a {
     text-decoration-line: none;
     color: bisque;
 }
+
+.gate {
+    background: url("../img/gate.jpg") center 0 no-repeat fixed;
+    height: 100vh;
+    background-position: top;
+    background-size: cover;
+}
+
+.gate .dark {
+    background-image: url("../img/durotar.jpg");
+    background-position: top;
+    background-size: cover;
+    border-bottom: solid 6px black;
+}
+
+.gate .dark h1 {
+    color: bisque;
+    text-shadow: 2px 2px 3px #000000;
+}
+
+.gate .dark p {
+    color: white;
+}
+
+.gate .dark .boutguid {
+    background-color: rgba(0, 0, 0, 0.3);
+    border: solid 1px bisque;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    text-shadow: 2px 2px 3px #000000;
+    font-family: 'IM Fell English SC', serif;
+    text-transform: uppercase;
+    color: bisque;
+}
+
+.gate .dark .boutguid:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    border: solid 1px black;
+}
+
+.gate .dark .boutguid a {
+    text-decoration-line: none;
+    color: bisque;
+}
+
+.gate .dark .boutguid a:hover {
+    color: white;
+}
+
+.gate .light {
+    background-image: url("../img/ragna.jpg");
+    background-position: center;
+    background-size: cover;
+    border-bottom: solid 6px black;
+    border-top: solid 6px black;
+}
+
+.gate .light h1 {
+    color: bisque;
+    text-shadow: 2px 2px 3px #000000;
+}
+
+.gate .light p {
+    color: white;
+}
+
+.gate .light .boutguid {
+    background-color: rgba(0, 0, 0, 0.3);
+    border: solid 1px bisque;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    text-shadow: 2px 2px 3px #000000;
+    font-family: 'IM Fell English SC', serif;
+    text-transform: uppercase;
+    color: bisque;
+}
+
+.gate .light .boutguid:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.gate .light .boutguid a {
+    text-decoration-line: none;
+    color: bisque;
+}
+
+.gate .light .boutguid a:hover {
+    color: white;
+}
+
+.gate2 {
+    background: url("../img/horde2.jpg") center 0 repeat-y fixed;
+    height: 100vh;
+    background-position: top;
+    background-size: cover;
+    position: relative;
+}
+
+.gate2 .testmh {
+    width: 80%;
+}
+
+.gate2 h1 {
+    color: bisque;
+    text-shadow: 2px 2px 6px black;
+}
+
+.gate2 .hord {
+    background: url("../img/grey.jpg");
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    color: bisque;
+    width: 40%;
+    padding: 25px 25px 10px 25px;
+}
+
+.gate2 .hord2 {
+    background: url("../img/grey.jpg");
+    position: absolute;
+    bottom: -15%;
+    left: 5%;
+    color: bisque;
+    width: 40%;
+    padding: 25px 25px 10px 25px;
+}
+
+.sticky{
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
 
 

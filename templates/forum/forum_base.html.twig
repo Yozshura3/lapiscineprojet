@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ asset('css/style_forum.css') }}">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+<header>
+    <div class="menufofo">
+        <div class="home">
+            <div class="homeimg"><img class="resp" src="{{ asset('img/home.png') }}" alt=""></div>
+            <div class="forums"><p>Forum</p></div>
+        </div>
+
+        <div class="account">
+            <div class="compte">
+                <p>Mon compte</p>
+                <div class="accountimg"><img class="resp" src="{{ asset('img/triangle.png') }}" alt=""></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="logo">
+        <img src="{{ asset('img/logo.png') }}" alt="">
+
+    </div>
+</header>
+
+{% block section %}
+
+{% endblock %}
+</body>
+</html>

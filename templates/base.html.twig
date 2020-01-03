@@ -1,55 +1,34 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}F O R N H E I M{% endblock %}</title>
-        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-        <link href="https://fonts.googleapis.com/css?family=IM+Fell+English|IM+Fell+English+SC&display=swap" rel="stylesheet">
-    </head>
-    <body>
-        <header>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}F O R N H E I M{% endblock %}</title>
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=IM+Fell+English|IM+Fell+English+SC&display=swap"
+          rel="stylesheet">
+</head>
+<body>
+<header>
+    <!-- Barre de navigation général sur toutes les pages du site, non du forum -->
+    <div class="navigation">
 
-            <div class="navigation">
-
-                <div><a href="">ACCUEIL</a></div>
-                <div><a href="">GUIDES</a></div>
-                <div class="logo">
-                    <img src="{{ asset('img/logo.png') }}" alt="Logo Fornheim" class="resp">
-                </div>
-                <div><a href="">FORUM</a></div>
-                <div><a href="">SHADOWLAND</a></div>
-            </div>
-
-            <div id="background_container ">
-                <video class="VideoPane-video " src=" {{ asset('img/wow6.mp4') }} " data-src="video/wow6.mp4 " loop="loop " muted="muted " autoplay="autoplay " playsinline="playsinline ">
-                </video>
-            </div>
-
-        </header>
-        <h1>Bienvenue sur Fornheim</h1>
-        <div class="presentation">
-            <div class="para1">
-                <p>«World of Warcraft Classic est une version de WoW sans aucune extension. Blizzard propose en effet un bond dans le passé et un retour 15 ans en arrière, lorsque le jeu était en version 1.12. <br> Ainsi, le monde de WoW Classic est
-                    celui qui précède le grand Cataclysme. Au niveau du gameplay, le jeu change complètement. Les Chasseurs doivent s'équiper de munitions et les Paladins ne sont disponibles que pour les joueurs de l'Alliance ainsi que les chamans
-                    pour la Horde.» <br> Voici un guide proposé par Mamytwink pour rentrer dans l'univers de Classic.
-                </p>
-
-            </div>
-
-            <div class="para2">
-                <p>Qui n'a jamais rêvé de se sentir libre dans un monde tant imaginaire qu'immersif? Entouré par des kilomètres de plaines, montagnes, et océans, mais aussi accompagné par des miliers de joueurs provenant de tout horizons. Si comme nous,
-                    tu en as envies, alors sautes le pas et rejoins-nous.
-                </p>
-            </div>
-
+        <div><a href="">ACCUEIL</a></div>
+        <div><a href="">GUIDES</a></div>
+        <div class="logo">
+            <img src="{{ asset('img/logo.png') }}" alt="Logo Fornheim" class="resp">
         </div>
-        <a href=" https://www.mamytwink.com/actualite/wow-classic-toutes-les-informations-sur-la-version-originale-de-wow " target="_blank ">
-            <div class="news">Aller sur Mamytwink</div>
-        </a>
-        <a href="https://eu.shop.battle.net/fr-fr/product/world-of-warcraft-subscription?blzcmp=wow_subscribe_ragnaros " target="_blank ">
-            <div class="news">World of Warcraf54t</div>
-        </a>
+        <div><a target="_blank" href="{{ path('forum') }}">FORUM</a></div>
+        <div><a href="">SHADOWLAND</a></div>
+    </div>
+</header>
 
+    <!-- Contenue du site entre le header et le footer -->
 
-    </body>
+{% block section %}
+{% endblock %}
+
+    <script type="text/javascript" src="../js/script.js"></script>
+</body>
 </html>

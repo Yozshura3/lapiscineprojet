@@ -1,0 +1,116 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+body{
+    background-image: url("../img/wallfofo.png");
+    background-position: center;
+    background-size: contain;
+    height: 100vh;
+}
+
+/* Header */
+
+
+header{
+    position: relative;
+    background-image: url("../img/headerforum.png");
+    background-position: top;
+    background-size: cover;
+    height: 70vh;
+    border-bottom: solid 1px rgba(96, 58, 0, 0.9);
+
+}
+
+.resp{
+    width: 100%;
+}
+
+.homeimg, .accountimg{
+    width:20px;
+    margin: 10px;
+}
+
+.logo{
+    position: absolute;
+    top: 15vh;
+    right: 5%;
+}
+
+.account{
+    color: white;
+    font-size: 1.3em;
+}
+.home{
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 1.5em;
+}
+.menufofo{
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between ;
+    height: 70vh;
+}
+
+.compte{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 1.3em;
+}
+
+/* Main Content */
+
+.main-wrap{
+
+    max-width: 1250px;
+    margin: 50px auto;
+    height: 100vh;
+    color: bisque;
+}
+
+.main-title{
+    width: 150px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.category-wrap{
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.main-category{
+    border: solid 1px bisque;
+    margin: 5px auto;
+    width: 49%;
+    padding: 10px;
+    background-color: rgba(255,255,255,0.3);
+
+}
+
+.category-title{
+    font-size: 2em;
+    text-align: center;
+}
+.subcat{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+.sub-title{
+    margin: 5px;
+}
+form{
+    color: white;
+}

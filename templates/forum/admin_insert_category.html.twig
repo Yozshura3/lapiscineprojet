@@ -1,0 +1,12 @@
+{% extends 'forum/forum_base.html.twig' %}
+
+{% block section %}
+
+    {{ form_start(categoryFormView) }}
+
+    {{ form_errors(categoryFormView.titleCategory) }}
+    {{ form_label(categoryFormView.titleCategory) }}
+
+    {{ form_end(categoryFormView) }}
+
+{% endblock %}

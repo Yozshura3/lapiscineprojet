@@ -1,0 +1,31 @@
+{% extends 'forum/forum_base.html.twig' %}
+
+{% block title %} Forums Fornheim {% endblock %}
+{% block section %}
+{#{{ dump(categories) }}#}
+    <div class="main-wrap">
+
+        <div class="main-title"><h1>Catégories</h1></div>
+        <hr>
+        <div class="category-wrap">
+
+            {% for categorie in categories %}
+
+                <div class="main-category">
+
+                    <h3 class="category-title">{{ categorie.mainCategory.titleCategory }}</h3>
+
+                <div class="subcat">
+                    {% for subCategorie in categorie.subCategories %}
+                        <h4 class="sub-title">{{ subCategorie.titleCategory }}</h4>
+                    {% endfor %}
+                </div>
+
+                </div>
+
+
+            {% endfor %}
+
+        </div>
+    </div>
+{% endblock %}

@@ -1,2 +1,143 @@
 {% extends('base.html.twig') %}
 
+{% block section %}
+
+    <main class="container-fluid p-0 m-0">
+
+        <div class="container absol3 ">
+            <div class="row align-items-baseline justify-content-center">
+                <div class="col-12 text-center pb-5">
+                    <h1>Bienvenue sur Fornheim</h1>
+                </div>
+                <div class="col-6">
+                    <p>«World of Warcraft Classic est une version de WoW sans aucune extension. Blizzard propose en
+                        effet un bond dans le passé et un retour 15 ans en arrière, lorsque le jeu était en version
+                        1.12. <br> Ainsi, le monde de WoW Classic est
+                        celui qui précède le grand Cataclysme. Au niveau du gameplay, le jeu change complètement. Les
+                        Chasseurs doivent s'équiper de munitions et les Paladins ne sont disponibles que pour les
+                        joueurs de l'Alliance ainsi que les chamans
+                        pour la Horde.» <br> Voici un guide proposé par Mamytwink pour rentrer dans l'univers de
+                        Classic.
+                    </p>
+                </div>
+                <div class="col-6">
+                    <p>Qui n'a jamais rêvé de se sentir libre dans un monde tant imaginaire qu'immersif? Entouré par des
+                        kilomètres de plaines, montagnes, et océans, mais aussi accompagné par des miliers de joueurs
+                        provenant de tout horizons. Si comme nous,
+                        tu en as envies, alors sautes le pas et rejoins nous.
+                    </p>
+
+
+                </div>
+
+                <div class="col-12 d-flex justify-content-around">
+                    <a href=" https://www.mamytwink.com/actualite/wow-classic-toutes-les-informations-sur-la-version-originale-de-wow "
+                       target="_blank ">
+                        <div class="col-12 news ">Aller sur Mamytwink</div>
+                    </a>
+
+                    <a href="https://eu.shop.battle.net/fr-fr/product/world-of-warcraft-subscription?blzcmp=wow_subscribe_ragnaros "
+                       target="_blank ">
+                        <div class=" col-12 news ">World of Warcraft</div>
+                    </a>
+                </div>
+            </div>
+
+
+        </div>
+    <!-- Intégration de la vidéo en header grâce à la balise <video></video> -->
+        <div id="background_container ">
+            <video class="VideoPane-video " src="img/wow6.mp4 " data-src="video/wow6.mp4 " loop="loop " muted="muted "
+                   autoplay="autoplay " playsinline="playsinline ">
+            </video>
+        </div>
+    </main>
+
+    <!-- 1 er et 2eme bloc articles -->
+    <div class="fixed ">
+        <div class="gate px-0 container-fluid d-flex flex-column justify-content-between ">
+
+            <div class="row py-5 px-0 mx-0 dark align-items-center justify-content-start ">
+
+                <div class="col-5 pl-3 ">
+                    <h1>Découvrir nos guides</h1>
+                    <p>
+                        Vous souhaitez optimiser votre personnage afin d'attaquer le raid initiatique Molten Core dès le
+                        level 60? Découvrez nos guides sur la meilleur façon de vous préparer tout le long de votre
+                        prise de niveaux. </p>
+                </div>
+                <div class="col-2 boutguid ">
+                    <a href="#guides.html ">Voir les guides</a>
+                </div>
+            </div>
+
+            <div class="row py-5 mx-0 light align-items-center justify-content-end ">
+
+                <div class="col-2 boutguid ">
+                    <a target="_blank" href="{{ path('forum') }}">Accéder au forum</a>
+                </div>
+
+                <div class="col-5 ">
+                    <h1>Rencontrer la communautée</h1>
+                    <p>
+                        Ainsi, vous souhaitez faire connaissance avec les membres de la guilde Forhneim sans forcément
+                        être connecté, mise à part sur notre discord, nous avons aussi un forum à disposition afin de
+                        partager autant d'informations que nécessaires, mais aussi d'autres
+                        partages en dehors de WoW.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="fixed2 ">
+        <div class="container-fluid gate2 ">
+
+            <div class="row px-0 ">
+
+                <div class="col-12 py-3 ">
+                    <h1>ORIGINE DE LA HORDE</h1>
+                </div>
+
+                <div class="text-center ">
+                    <img src={{ "img/gate2.jpg" }} alt="Gate2" class="testmh ">
+                </div>
+
+                <div class="hord ">
+                    <p>La Horde est l'une des deux principales factions de races d'Azeroth, l'autre étant l'Alliance.
+                        Elle regroupe des races et des peuples ayant pour convictions leur force leur ruse et leurs bons
+                        présages de la nature et des éléments en
+                        commun tout en se battant pour trouver une place dans ce monde. <br> <br>
+                        <em>Leurs mœurs étaient parfois belliqueuses, mais les chefs de
+                            la Horde incarnent l’honneur le courage et la sagesse.
+                            Les races de la Horde se sont battues pour se libérer d’une tyrannie démoniaque, d’un
+                            redoutable fléau et d’innombrables guerres pour leurs liberté.</em>
+                    </p>
+                </div>
+                <div class="hord2 ">
+                    <p>Si la Horde s'est montrée plus discrète, sa puissance fît autrefois frémir les autres races. A
+                        l'origine, la Horde était l'union des clans orcs pour l'invasion d'Azeroth lors de la première
+                        guerre. Elle fut premièrement dirigé par
+                        Main-noire le destructeur, puis une fois mort par Orgrim Marteau-du-destin. A cette époque, la
+                        Horde comprenait les clans Tisse-foudre , Rochenoire, Lame Ardente, Orbite-sanglante,
+                        Loup-de-Givre, Marteau du Crépuscule, Black Tooth
+                        Grin et Gueule-de-Dragon. <br> <br> Elle avait été créée pour unifier les clans en une seule
+                        armée sous les ordres de Main-noire qui ne reproduirait pas l'erreur de l'attaque de Hurlevent.
+                        Y rentrèrent également les ogres venus
+                        directement de Draenor.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="testwall"></div>
+    </div>
+
+
+
+{% endblock %}
