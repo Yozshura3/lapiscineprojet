@@ -15,7 +15,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class ForumController extends AbstractController
 {
     /**
-     * @Route("/forum", name="forum")
+     * @Route("/forum", name="forum_accueil")
      */
     public function forumController(CategoriesRepository $categoriesRepository)
     {
@@ -26,6 +26,22 @@ class ForumController extends AbstractController
             'categories' => $categoriesRepository->categoriesAndSubCategories()
         ]);
     }
+
+    /**
+     * @Route("/forum/{idCategory}", name="forum_category")
+     */
+    public function category(CategoriesRepository $categoriesRepository, $idCategory)
+    {
+        $subCategories = $categoriesRepository->getSubCategories($idCategory);
+        $posts = NULL;
+        //TODO Linker post/sujet aux sub categories
+
+    return $this->render('forum/forum_category.html.twig', [
+        'subCategories' => $subCategories,
+        'posts' => $posts
+    ]);
+    }
+
 
 
     /**

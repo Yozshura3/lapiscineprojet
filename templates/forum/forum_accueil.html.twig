@@ -1,8 +1,8 @@
 {% extends 'forum/forum_base.html.twig' %}
 
-{% block title %} Forums Fornheim {% endblock %}
+{% block title %} Forum Fornheim {% endblock %}
 {% block section %}
-{#{{ dump(categories) }}#}
+{{ dump(categories) }}
     <div class="main-wrap">
 
         <div class="main-title"><h1>Catégories</h1></div>
@@ -13,11 +13,15 @@
 
                 <div class="main-category">
 
-                    <h3 class="category-title">{{ categorie.mainCategory.titleCategory }}</h3>
+                   <a href="{{ path('forum_category', {idCategory: categorie.mainCategory.id}) }}"><h3 class="category-title">{{ categorie.mainCategory.titleCategory }}</h3></a>
+
+
 
                 <div class="subcat">
                     {% for subCategorie in categorie.subCategories %}
-                        <h4 class="sub-title">{{ subCategorie.titleCategory }}</h4>
+
+                        <a href="{{ path('forum_category', {idCategory: subCategorie.id}) }}"><h4 class="sub-title">{{ subCategorie.titleCategory }}</h4></a>
+
                     {% endfor %}
                 </div>
 

@@ -1,0 +1,19 @@
+{% extends 'forum/forum_base.html.twig' %}
+
+{% block section %}
+
+{% if subCategories is not empty %}
+
+    {% for category in subCategories %}
+        <div class="forum_categories">
+            <h4 class="sub-title">{{ category.titleCategory }}</h4>
+        </div>
+    {% endfor %}
+
+{% endif %}
+
+
+
+
+
+{% endblock %}

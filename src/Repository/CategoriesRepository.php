@@ -44,18 +44,16 @@ class CategoriesRepository extends ServiceEntityRepository
     {
         return $this->createQueryBuilder('c')
             ->where("c.categoryParent is NULL")
-            ->setMaxResults(10)
             ->getQuery()
             ->getResult();
     }
 
     // On obtient les sous catégories à travers l'id de la catégorie parent
-    private function getSubCategories(int $parentId)
+    public function getSubCategories(int $parentId)
     {
         return $this->createQueryBuilder('c')
             ->where("c.categoryParent = :categoryInput")
             ->setParameter('categoryInput', $parentId)
-            ->setMaxResults(10)
             ->getQuery()
             ->getResult();
     }

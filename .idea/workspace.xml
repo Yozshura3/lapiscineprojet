@@ -2,12 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ca37ee60-3d2d-41b2-9ac3-d660df83f766" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/fornheim.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/fornheim.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/forum/forum_category.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/AccueilController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AccueilController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/style_forum.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style_forum.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ForumController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ForumController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/CategoriesRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/CategoriesRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/accueil.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accueil.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/forum/forum_accueil.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/forum/forum_accueil.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,7 +152,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../support-cours-exo-library" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
@@ -204,6 +206,7 @@
       <workItem from="1577708181630" duration="5903000" />
       <workItem from="1577972257172" duration="1350000" />
       <workItem from="1578066030019" duration="14000" />
+      <workItem from="1578066044508" duration="9189000" />
     </task>
     <servers />
   </component>
@@ -224,13 +227,17 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="549" y="168" key="FileChooserDialogImpl" timestamp="1578066041494">
+    <state x="549" y="168" key="FileChooserDialogImpl" timestamp="1578068428949">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="168" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1578066041494" />
+    <state x="549" y="168" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1578068428949" />
     <state x="465" y="237" key="com.intellij.ide.util.TipDialog" timestamp="1578066029638">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="465" y="237" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1578066029638" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1578074472939">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1578074472939" />
   </component>
 </project>
