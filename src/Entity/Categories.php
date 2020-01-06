@@ -33,9 +33,15 @@ class Categories
      */
     private $titleCategory;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\PostSujet", mappedBy="topic")
+     */
+    private $postSujets;
+
     public function __construct()
     {
         $this->categoryChild = new ArrayCollection();
+        $this->postSujets = new ArrayCollection();
     }
 
     public function __toString()
@@ -100,6 +106,37 @@ class Categories
     public function setTitleCategory(string $titleCategory): self
     {
         $this->titleCategory = $titleCategory;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|PostSujet[]
+     */
+    public function getPostSujets(): Collection
+    {
+        return $this->postSujets;
+    }
+
+    public function addPostSujet(PostSujet $postSujet): self
+    {
+        if (!$this->postSujets->contains($postSujet)) {
+            $this->postSujets[] = $postSujet;
+            $postSujet->setTopic($this);
+        }
+
+        return $this;
+    }
+
+    public function removePostSujet(PostSujet $postSujet): self
+    {
+        if ($this->postSujets->contains($postSujet)) {
+            $this->postSujets->removeElement($postSujet);
+            // set the owning side to null (unless already changed)
+            if ($postSujet->getTopic() === $this) {
+                $postSujet->setTopic(null);
+            }
+        }
 
         return $this;
     }

@@ -6,7 +6,9 @@
 
     {% for category in subCategories %}
         <div class="forum_categories">
-            <h4 class="sub-title">{{ category.titleCategory }}</h4>
+
+            <a href="{{ path('forum_category') }}"><h4 class="sub-title">{{ category.titleCategory }}</h4></a>
+
         </div>
     {% endfor %}
 
