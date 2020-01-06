@@ -5,8 +5,11 @@ namespace App\Controller;
 
 
 use App\Entity\Categories;
+use App\Entity\PostSujet;
 use App\Form\CategoriesType;
+use App\Form\TopicType;
 use App\Repository\CategoriesRepository;
+use App\Repository\PostSujetRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -30,15 +33,18 @@ class ForumController extends AbstractController
     /**
      * @Route("/forum/{idCategory}", name="forum_category")
      */
-    public function category(CategoriesRepository $categoriesRepository, $idCategory)
+    public function category(PostSujetRepository $postSujetRepository,CategoriesRepository $categoriesRepository, $idCategory)
     {
         $subCategories = $categoriesRepository->getSubCategories($idCategory);
         $posts = NULL;
         //TODO Linker post/sujet aux sub categories
 
+        $topics = $postSujetRepository->findAll();
+
     return $this->render('forum/forum_category.html.twig', [
         'subCategories' => $subCategories,
-        'posts' => $posts
+        'posts' => $posts,
+        'topics' => $topics
     ]);
     }
 
@@ -85,10 +91,35 @@ class ForumController extends AbstractController
         ]);
     }
 
-
     /**
-     * @Route("/forum/{id}", name="categoryParent")
+     * @Route("/forum/form/insert_topic", name="insert_topic")
      */
+    public function topicFormInsert(Request $request, EntityManagerInterface $entityManager)
+    {
+        $topic = new PostSujet();
+
+        $form = $this->createForm(TopicType::class, $topic);
+
+
+        if ($request->isMethod('POST')) {
+            $form->handleRequest($request);
+
+            if ($form->isValid()) {
+
+                $entityManager->persist($topic);
+                $entityManager->flush();
+
+                return $this->redirectToRoute('forum_accueil');
+            }
+        }
+        $topicFormView = $form->createView();
+
+        return $this->render('forum/insert_topic.html.twig', [
+            'topicFormView' => $topicFormView
+        ]);
+
+
+    }
 
 
 }

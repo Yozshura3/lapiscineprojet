@@ -2,12 +2,47 @@
 
 {% block section %}
 
+    <div class="section-title">
+        <div class="bouton-topic-add">
+            <a href="{{ path('insert_topic') }}">Ajouter un Sujet</a>
+        </div>
+    </div>
+
+<div class="content">
+    {% if subCategories is empty %}
+<table class="topic-list">
+    <thead>
+    <tr>
+        <th>Sujet</th>
+        <th>Auteur</th>
+        <th>Réponses</th>
+        <th>Vues</th>
+        <th>Date</th>
+    </tr>
+    </thead>
+            {% for topic in topics %}
+
+    <tbody>
+    <tr>
+        <td>{{ topic.title }}</td>
+        <td>{{ topic.auteur }}</td>
+        <td>18</td>
+        <td>2.5k</td>
+        <td>6 Janvier</td>
+    </tr>
+    </tbody>
+{% endfor %}
+</table>
+    {% endif %}
+
+</div>
 {% if subCategories is not empty %}
+
 
     {% for category in subCategories %}
         <div class="forum_categories">
 
-            <a href="{{ path('forum_category') }}"><h4 class="sub-title">{{ category.titleCategory }}</h4></a>
+            <a href=""><h4 class="sub-title">{{ category.titleCategory }}</h4></a>
 
         </div>
     {% endfor %}

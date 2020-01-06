@@ -32,6 +32,11 @@ class PostSujet
      */
     private $topic;
 
+    /**
+     * @ORM\Column(type="string", length=50)
+     */
+    private $auteur;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -69,6 +74,18 @@ class PostSujet
     public function setTopic(?categories $topic): self
     {
         $this->topic = $topic;
+
+        return $this;
+    }
+
+    public function getAuteur(): ?string
+    {
+        return $this->auteur;
+    }
+
+    public function setAuteur(string $auteur): self
+    {
+        $this->auteur = $auteur;
 
         return $this;
     }

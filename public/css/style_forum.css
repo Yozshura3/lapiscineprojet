@@ -128,3 +128,52 @@ a{
     background-color: rgba(255,255,255,0.3);
 
 }
+
+a h4{
+    color: #fff2db;
+}
+
+.content{
+    width: 60%;
+    margin: 50px auto;
+}
+
+table{
+    display: table;
+
+
+}
+thead{
+    display: table-header-group;
+    vertical-align: middle;
+    text-align: left;
+}
+
+th, td{
+    padding: 10px;
+}
+
+.topic-list{
+    width: 100%;
+    color: white;
+    border-top: solid 1px bisque;
+    border-bottom: solid 1px bisque;
+
+}
+
+tbody{
+    display: table-row-group;
+    vertical-align: middle;
+    padding: 10px;
+}
+
+.bouton-topic-add{
+    text-transform: uppercase;
+    width: 180px;
+    height: 50px;
+    background-color: rgba(255, 238, 214, 0.1);
+    border: solid 1px bisque;
+    text-align: center;
+    line-height: 50px;
+    margin: 10px auto;
+}
