@@ -3,9 +3,9 @@
 {% block section %}
 
     <div class="section-title">
-        <div class="bouton-topic-add">
-            <a href="{{ path('insert_topic') }}">Ajouter un Sujet</a>
-        </div>
+
+        <div class="bouton-topic-add"><a href="{{ path('insert_topic') }}">Ajouter un Sujet</a></div>
+
     </div>
 
 <div class="content">
@@ -17,21 +17,34 @@
         <th>Auteur</th>
         <th>Réponses</th>
         <th>Vues</th>
-        <th>Date</th>
+        <th>Options</th>
     </tr>
     </thead>
-            {% for topic in topics %}
 
+            {% for topic in topics %}
+                <div class="topic-selec">
     <tbody>
     <tr>
         <td>{{ topic.title }}</td>
         <td>{{ topic.auteur }}</td>
         <td>18</td>
         <td>2.5k</td>
-        <td>6 Janvier</td>
+        <td>
+            <div class="options">
+                <div class="update">
+
+                    <a href="{{ path('update_topic', {id: topic.id}) }}"><img class="resp" src="{{ asset('img/notes.png') }}" alt=""></a>
+                </div>
+                <div class="delete">
+                    <a href="{{ path('delete_topic', {id: topic.id}) }}"><img class="resp" src="{{ asset('img/clear.png') }}" alt=""></a>
+                </div>
+            </div>
+        </td>
     </tr>
     </tbody>
+                </div>
 {% endfor %}
+
 </table>
     {% endif %}
 

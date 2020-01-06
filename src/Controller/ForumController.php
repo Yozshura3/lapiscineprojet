@@ -118,8 +118,42 @@ class ForumController extends AbstractController
             'topicFormView' => $topicFormView
         ]);
 
-
     }
 
+    /**
+     * @Route("/forum/update_topic/{id}", name="update_topic")
+     */
+    public function updateTopicForm(PostSujetRepository $postSujetRepository, EntityManagerInterface $entityManager, Request $request, $id)
+    {
+        $topic = $postSujetRepository->find($id);
+        $topicForm = $this->createForm(TopicType::class, $topic);
+        if ($request->isMethod('POST'))
+        {
+            $topicForm->handleRequest($request);
+
+            if($topicForm->isValid()) {
+                $entityManager->persist($topic);
+                $entityManager->flush();
+                return $this->redirectToRoute('forum_accueil');
+            }
+        }
+        $topicFormView = $topicForm->createView();
+
+        return $this->render('forum/insert_topic.html.twig', [
+            'topicFormView' => $topicFormView
+        ]);
+    }
+
+    /**
+     * @Route("/forum/delete_topic/{id}", name="delete_topic")
+     */
+    public function deleteTopic(PostSujetRepository $postSujetRepository, EntityManagerInterface $entityManager, Request $request, $id)
+    {
+        $topic = $postSujetRepository->find($id);
+        $entityManager->remove($topic);
+        $entityManager->flush();
+
+        return $this->redirectToRoute('forum_accueil');
+    }
 
 }
