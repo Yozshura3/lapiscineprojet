@@ -3,7 +3,9 @@
 namespace App\Form;
 
 use App\Entity\PostSujet;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -14,10 +16,16 @@ class TopicType extends AbstractType
     {
         $builder
             ->add('title')
-            ->add('message')
-            ->add('auteur')
             ->add('topic')
-            ->add('Ajouter', SubmitType::class)
+            ->add('message', CKEditorType::class, [
+                'config' => [
+                    'uiColor' => '#ffe4ab',
+                    'toolbar' => 'full',
+                    'required' => true
+                ]
+            ])
+
+            ->add('Envoyer', SubmitType::class)
         ;
     }
 

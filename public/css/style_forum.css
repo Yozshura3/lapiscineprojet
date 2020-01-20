@@ -98,6 +98,15 @@ header{
 
 }
 
+.main-form{
+    border: solid 1px bisque;
+    margin: 5px auto;
+    width: auto;
+    padding: 10px;
+    background-color: rgba(255,255,255,0.2);
+
+}
+
 .category-title{
     font-size: 2em;
     text-align: center;
@@ -123,7 +132,7 @@ a{
 .forum_categories{
     border: solid 1px bisque;
     margin: 5px auto;
-    width: 10%;
+    width: 30%;
     padding: 10px;
     background-color: rgba(255,255,255,0.3);
 
@@ -136,6 +145,8 @@ a h4{
 .content{
     width: 80%;
     margin: 50px auto;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 table{
@@ -169,7 +180,7 @@ tbody{
 
 }
 
-.bouton-topic-add{
+.bouton-topic-add, .category-add{
     text-transform: uppercase;
     width: 180px;
     height: 40px;
@@ -178,6 +189,22 @@ tbody{
     text-align: center;
     line-height: 40px;
     margin: 10px auto;
+}
+
+.category-add{
+    text-transform: uppercase;
+    width: 250px;
+    height: 50px;
+    background-color: rgba(255, 238, 214, 0.1);
+    border: solid 1px bisque;
+    text-align: center;
+    line-height: 50px;
+    margin: 10px auto;
+}
+
+.form-add{
+    width: 50%;
+    margin: 0 auto;
 }
 
 tbody:hover{
@@ -196,4 +223,71 @@ tbody:hover{
     display: flex;
     width: 30%;
     margin: 0;
+}
+
+/* FOOTER */
+
+footer{
+    padding: 50px;
+}
+.foot-forum{
+    width: 50%;
+    margin: 0 auto;
+}
+.foot-forum ul{
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+    color: bisque;
+    font-size: 1.2em;
+    list-style: none;
+    text-decoration: none;
+
+}
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 800px){
+
+    .category-wrap{
+        display: block;
+        clear: both;
+    }
+    .main-category{
+        width: 100%;
+
+    }
+    .subcat{
+        display: block;
+        text-align: justify;
+    }
+    div {
+        display: block;
+    }
+    .logo{
+        width: 100%;
+        height: auto;
+        position: absolute;
+        top: 15vh;
+        right: 0;
+    }
+    .home{
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: black;
+    }
+    .account{
+        position: absolute;
+        top: 0;
+        right: 0;
+        color: black;
+    }
+
+    footer {
+        display: none;
+    }
+
+    header{
+        height: 30vh;
+    }
 }

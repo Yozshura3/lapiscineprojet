@@ -44,7 +44,6 @@ html {
     left: 0;
     background-position: center;
     background-size: cover;
-
 }
 
 .VideoPane-video {
@@ -53,6 +52,9 @@ html {
 
 /* Barre de navigation */
 .navigation {
+    position: fixed;
+    width: 100%;
+    z-index:999;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -66,7 +68,7 @@ html {
     font-family: 'IM Fell English SC', serif;
     display: inline-block;
     text-shadow: 2px 2px 5px black;
-    background: -webkit-linear-gradient(#f88c44, #ffa3c6);
+    background: linear-gradient(#f88c44, #ffa3c6);
     /* background: -webkit-linear-gradient(rgb(74, 39, 32), rgb(202, 132, 56)); */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -312,7 +314,7 @@ html {
 .gate2 .hord2 {
     background: url("../img/grey.jpg");
     position: absolute;
-    bottom: -15%;
+    bottom: -3%;
     left: 5%;
     color: bisque;
     width: 40%;
@@ -325,5 +327,23 @@ html {
     width: 100%;
 }
 
+/* FOOTER */
+footer{
+    padding: 50px;
+    background-image: url("../img/wood.png");
+}
+.foot-wrap{
+    width: 50%;
+    margin: 0 auto;
+}
+.foot-wrap ul{
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+    color: bisque;
+    font-size: 1.2em;
+    list-style: none;
+    text-decoration: none;
 
+}
 

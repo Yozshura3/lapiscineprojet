@@ -5,6 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% block link %}{% endblock %}
     <link rel="stylesheet" href="{{ asset('css/style_forum.css') }}">
     <title>{% block title %}{% endblock %}</title>
 </head>
@@ -25,7 +26,7 @@
     </div>
 
     <div class="logo">
-        <img src="{{ asset('img/logo.png') }}" alt="">
+        <img class="resp" src="{{ asset('img/logo.png') }}" alt="">
 
     </div>
 </header>
@@ -33,5 +34,16 @@
 {% block section %}
 
 {% endblock %}
+<footer>
+    <div class="foot-forum">
+        <ul>
+            <li>A propos</li>
+            <li>Mentions légales</li>
+            <li>FAQ</li>
+            <li>CGU</li>
+            <li>Contact</li>
+        </ul>
+    </div>
+</footer>
 </body>
 </html>

@@ -11,6 +11,7 @@ use App\Form\TopicType;
 use App\Repository\CategoriesRepository;
 use App\Repository\PostSujetRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -20,7 +21,7 @@ class ForumController extends AbstractController
     /**
      * @Route("/forum", name="forum_accueil")
      */
-    public function forumController(CategoriesRepository $categoriesRepository)
+    public function forumAccueil(CategoriesRepository $categoriesRepository)
     {
 
         $category = $categoriesRepository->findAll();
@@ -31,9 +32,22 @@ class ForumController extends AbstractController
     }
 
     /**
+     * @Route("/admin/forum", name="admin_forum_accueil")
+     */
+    public function adminAccueil(CategoriesRepository $categoriesRepository)
+    {
+
+        $category = $categoriesRepository->findAll();
+
+        return $this->render('forum/admin_forum_accueil.html.twig', [
+            'categories' => $categoriesRepository->categoriesAndSubCategories()
+        ]);
+    }
+
+    /**
      * @Route("/forum/{idCategory}", name="forum_category")
      */
-    public function category(PostSujetRepository $postSujetRepository,CategoriesRepository $categoriesRepository, $idCategory)
+    public function category(PostSujetRepository $postSujetRepository, CategoriesRepository $categoriesRepository, $idCategory)
     {
         $subCategories = $categoriesRepository->getSubCategories($idCategory);
         $posts = NULL;
@@ -41,13 +55,12 @@ class ForumController extends AbstractController
 
         $topics = $postSujetRepository->findAll();
 
-    return $this->render('forum/forum_category.html.twig', [
-        'subCategories' => $subCategories,
-        'posts' => $posts,
-        'topics' => $topics
-    ]);
+        return $this->render('forum/forum_category.html.twig', [
+            'subCategories' => $subCategories,
+            'posts' => $posts,
+            'topics' => $topics
+        ]);
     }
-
 
 
     /**
@@ -64,6 +77,9 @@ class ForumController extends AbstractController
         // et je lui associe mon entité Categories vide.
 
         $categoryForm = $this->createForm(CategoriesType::class, $category);
+
+        // A partir de mon gabarit, je crée la vue de mon Formulaire
+        $categoryFormView = $categoryForm->createView();
         // J'utilise un if pour vérifier si un formulaire a bien
         // été envoyé par la méthode POST.
         if ($request->isMethod('POST')) {
@@ -81,8 +97,7 @@ class ForumController extends AbstractController
                 $entityManager->flush();
             }
         }
-        // A partir de mon gabarit, je crée la vue de mon Formulaire
-        $categoryFormView = $categoryForm->createView();
+
 
         // puis je retourne un ficher twig et je lui envois ma variable
         // qui contient mon formulaire
@@ -127,11 +142,10 @@ class ForumController extends AbstractController
     {
         $topic = $postSujetRepository->find($id);
         $topicForm = $this->createForm(TopicType::class, $topic);
-        if ($request->isMethod('POST'))
-        {
+        if ($request->isMethod('POST')) {
             $topicForm->handleRequest($request);
 
-            if($topicForm->isValid()) {
+            if ($topicForm->isValid()) {
                 $entityManager->persist($topic);
                 $entityManager->flush();
                 return $this->redirectToRoute('forum_accueil');
@@ -155,5 +169,7 @@ class ForumController extends AbstractController
 
         return $this->redirectToRoute('forum_accueil');
     }
+
+
 
 }
