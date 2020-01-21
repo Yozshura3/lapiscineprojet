@@ -17,7 +17,20 @@ class AccueilController extends AbstractController
     }
 
 
+    /**
+    * @Route("/guides", name="guides")
+    */
+    public function guidesController(){
+        return $this->render('guides.html.twig');
+    }
 
+    /**
+     * @Route("/shadowland", name="shadowland")
+     */
+
+    public function shadowlandController(){
+        return $this->render('shadowland.html.twig');
+    }
 
 
 

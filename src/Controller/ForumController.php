@@ -32,7 +32,7 @@ class ForumController extends AbstractController
     }
 
     /**
-     * @Route("/admin/forum", name="admin_forum_accueil")
+     * @Route("/forum/admin", name="admin_forum_accueil")
      */
     public function adminAccueil(CategoriesRepository $categoriesRepository)
     {

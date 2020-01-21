@@ -249,7 +249,6 @@ footer{
 @media screen and (max-width: 800px){
 
     .category-wrap{
-        display: block;
         clear: both;
     }
     .main-category{
@@ -257,7 +256,6 @@ footer{
 
     }
     .subcat{
-        display: block;
         text-align: justify;
     }
     div {
